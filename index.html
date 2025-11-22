@@ -1,72 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loadify – Distributed Load Testing for Modern Systems</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Loadify — AI-assisted load testing as a service with best-in-class visualizations and performance engineering tools. Create, run, and analyze load tests with rich dashboards and intelligent scenario generation." />
+  <meta name="keywords" content="AI load testing, load testing as a service, performance engineering, visualization, scenario builder, observability, distributed load testing, SaaS" />
+  <title>Loadify — AI-assisted Load Testing & Performance Engineering</title>
 
-    <meta name="description" content="Loadify is a distributed load testing platform that lets you simulate high-traffic scenarios across global regions with no DevOps effort. Build, scale, and analyze tests effortlessly.">
+  <!-- SEO: OpenGraph -->
+  <meta property="og:title" content="Loadify — Performance Load Testing" />
+  <meta property="og:description" content="High‑performance load testing platform for modern backend systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://loadify.ir" />
 
-    <link rel="alternate" href="https://loadify.ir/" hreflang="en">
-    <link rel="alternate" href="https://loadify.ir/fa/" hreflang="fa">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-    <link rel="canonical" href="https://loadify.ir/">
-
-    <style>
-        body { font-family: sans-serif; margin: 0; padding: 0; background: #ffffff; line-height: 1.6; }
-        header, section { padding: 40px 20px; max-width: 900px; margin: auto; }
-        h1, h2 { margin-bottom: 16px; }
-        .hero { text-align: center; padding-top: 80px; padding-bottom: 80px; }
-        .btn-primary { background: #1565d8; padding: 14px 24px; color: #fff; text-decoration: none; border-radius: 8px; }
-        .btn-secondary { padding: 12px 20px; border: 1px solid #1565d8; color: #1565d8; text-decoration: none; border-radius: 8px; }
-        .lang { position: absolute; top: 20px; right: 20px; }
-    </style>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #111;
+      background: #f9fafb;
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 40px;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      text-decoration: none;
+    }
+    .cta-btn {
+      padding: 12px 20px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .cta-btn:hover {
+      background: #1e40af;
+    }
+    .hero {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 120px 20px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #0f172a;
+    }
+    .hero p {
+      font-size: 20px;
+      color: #475569;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 60px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .feature-card {
+      padding: 24px;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .feature-card h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #111827;
+    }
+    .feature-card p {
+      font-size: 16px;
+      color: #4b5563;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #6b7280;
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <a class="logo" href="#">Loadify</a>
+    
+  </header>
 
-<div class="lang">
-    <a href="/fa/" class="btn-secondary">فارسی</a>
-</div>
+  <section class="hero">
+    <h1>Load Testing as a Service — AI-assisted, Visual, Actionable</h1>
+    <p>Run realistic distributed load tests, get intelligent scenario suggestions, and explore results with interactive visualizations designed for performance engineers and teams.</p>
+  </section>
 
-<header class="hero">
-    <h1>High-Scale Load Testing, Without the Infrastructure Headache</h1>
-    <p>Loadify helps engineers simulate massive traffic, validate system reliability, and detect bottlenecks — all without spinning up servers or managing DevOps.</p>
-    <a href="#" class="btn-primary">Get Early Access</a>
-</header>
+  <section class="features">
+    <div class="feature-card">
+      <h3>AI-Assisted Scenario Generator</h3>
+      <p>Turn API specs or simple prompts into realistic test scenarios automatically — no scripting required.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Best-in-Class Visualizations</h3>
+      <p>Interactive, drillable dashboards that surface latency hotspots, resource contention, and user-path analytics.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Performance Engineering Toolkit</h3>
+      <p>Built-in analyzers, bottleneck detectors, and actionable recommendations to turn data into fixes.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Accessible SaaS Experience</h3>
+      <p>APIs, collaboration, and simple onboarding so teams of any size can run tests and act on results.</p>
+    </div>
+  </section>
 
-<section>
-    <h2>Why Loadify?</h2>
-    <p>Legacy load testing tools are slow, complex, and require manual server setup. Loadify eliminates all of that. Just define your scenario, choose regions, and run your tests instantly.</p>
-
-    <ul>
-        <li>Distributed load generation across multiple data centers</li>
-        <li>Simple scenario builder for complex workflows</li>
-        <li>Real-time metrics and performance analysis</li>
-        <li>No servers, no containers, no scaling issues</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Use Cases</h2>
-    <p>Loadify is built for engineering teams that need reliability at scale.</p>
-    <ul>
-        <li>E-commerce high-traffic sale events</li>
-        <li>Banking & payment transaction performance</li>
-        <li>API reliability under peak load</li>
-        <li>Microservices stress validation</li>
-    </ul>
-</section>
-
-<section>
-    <h2>How It Works</h2>
-    <p>Define scenarios → Select regions → Scale load → Analyze metrics</p>
-    <p>Everything runs through distributed load workers optimized to generate real-world traffic patterns at massive scale.</p>
-</section>
-
-<footer style="text-align:center; padding:40px; background:#f5f5f5;">
-    <p>© 2025 Loadify – Distributed Load Testing</p>
-</footer>
-
+  <footer>
+    © 2025 Loadify — All rights reserved.<br><br>Contact us: <a href="mailto:info@loadify.ir">info@loadify.ir</a>
+  </footer>
 </body>
 </html>
