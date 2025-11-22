@@ -708,7 +708,7 @@
     <p>Join our waitlist and be among the first to experience the future of load testing. Get exclusive early access and special launch pricing.</p>
     <div class="email-capture">
       <input type="email" class="email-input" placeholder="Enter your email address" />
-      <button class="btn-primary">Join Waitlist</button>
+      <button class="btn-primary waitlist-submit">Join Waitlist</button>
     </div>
   </section>
 
@@ -764,6 +764,70 @@
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(el);
     });
+
+    // Waitlist form submission
+    const emailInputs = document.querySelectorAll('.email-input');
+    const submitButtons = document.querySelectorAll('.waitlist-submit');
+    
+    submitButtons.forEach((btn, index) => {
+      btn.addEventListener('click', async () => {
+        const email = emailInputs[index].value.trim();
+        
+        if (!email) {
+          alert('Please enter your email address');
+          return;
+        }
+        
+        if (!isValidEmail(email)) {
+          alert('Please enter a valid email address');
+          return;
+        }
+        
+        btn.disabled = true;
+        btn.textContent = 'Joining...';
+        
+        try {
+          // OPTION 1: Using Formspree (recommended - easiest setup)
+          const response = await fetch('https://formspree.io/f/xblbaqrj', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              email: email,
+              _subject: 'New Loadify Waitlist Signup',
+              timestamp: new Date().toISOString()
+            })
+          });
+          
+          if (response.ok) {
+            alert('🎉 Success! You\'re on the waitlist. We\'ll notify you when we launch!');
+            emailInputs[index].value = '';
+          } else {
+            throw new Error('Submission failed');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Oops! Something went wrong. Please try again or email us at info@loadify.ir');
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Join Waitlist';
+        }
+      });
+    });
+    
+    // Allow Enter key to submit
+    emailInputs.forEach((input, index) => {
+      input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          submitButtons[index].click();
+        }
+      });
+    });
+    
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
   </script>
 </body>
 </html>
