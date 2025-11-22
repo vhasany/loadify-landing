@@ -1,82 +1,72 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loadify - تست عملکرد سرورها</title>
+    <title>Loadify – Distributed Load Testing for Modern Systems</title>
+
+    <meta name="description" content="Loadify is a distributed load testing platform that lets you simulate high-traffic scenarios across global regions with no DevOps effort. Build, scale, and analyze tests effortlessly.">
+
+    <link rel="alternate" href="https://loadify.ir/" hreflang="en">
+    <link rel="alternate" href="https://loadify.ir/fa/" hreflang="fa">
+
+    <link rel="canonical" href="https://loadify.ir/">
+
     <style>
-        /* ======== Reset ======== */
-        * {margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif;}
-        body {background: #f5f7fa; color:#333; line-height:1.6;}
-        a {text-decoration:none; color:inherit;}
-
-        /* ======== Container ======== */
-        .container {max-width: 900px; margin:0 auto; padding: 0 20px;}
-
-        /* ======== Header / Hero ======== */
-        header {padding:80px 0; text-align:center;}
-        header h1 {font-size:2.8rem; color:#1e3a8a; margin-bottom:20px;}
-        header p {font-size:1.2rem; color:#555; margin-bottom:30px;}
-        header .cta {background:#1e3a8a; color:white; padding:12px 25px; font-size:1rem; border-radius:5px; cursor:pointer; transition:0.3s;}
-        header .cta:hover {background:#3b4fc1;}
-
-        /* ======== Features ======== */
-        .features {display:flex; flex-wrap:wrap; justify-content:space-between; margin:60px 0;}
-        .feature {flex:1 1 45%; background:white; margin:10px; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
-        .feature h3 {color:#1e3a8a; margin-bottom:10px;}
-        .feature p {color:#555;}
-
-        /* ======== Signup ======== */
-        .signup {background:#1e3a8a; color:white; padding:50px 20px; text-align:center; border-radius:10px;}
-        .signup input {padding:12px; width:250px; border:none; border-radius:5px; margin-right:10px;}
-        .signup button {padding:12px 20px; border:none; border-radius:5px; background:#fff; color:#1e3a8a; cursor:pointer; transition:0.3s;}
-        .signup button:hover {background:#d9d9d9;}
-
-        /* ======== Footer ======== */
-        footer {text-align:center; padding:20px 0; color:#777; font-size:0.9rem;}
+        body { font-family: sans-serif; margin: 0; padding: 0; background: #ffffff; line-height: 1.6; }
+        header, section { padding: 40px 20px; max-width: 900px; margin: auto; }
+        h1, h2 { margin-bottom: 16px; }
+        .hero { text-align: center; padding-top: 80px; padding-bottom: 80px; }
+        .btn-primary { background: #1565d8; padding: 14px 24px; color: #fff; text-decoration: none; border-radius: 8px; }
+        .btn-secondary { padding: 12px 20px; border: 1px solid #1565d8; color: #1565d8; text-decoration: none; border-radius: 8px; }
+        .lang { position: absolute; top: 20px; right: 20px; }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Loadify</h1>
-            <p>تست و آنالیز عملکرد سرورهای شما در یک نگاه. سرعت و پایداری سرویس خود را ارتقا دهید.</p>
-            <a class="cta" href="#signup">شروع رایگان</a>
-        </div>
-    </header>
+<div class="lang">
+    <a href="/fa/" class="btn-secondary">فارسی</a>
+</div>
 
-    <section class="container features">
-        <div class="feature">
-            <h3>شبیه‌سازی واقعی کاربران</h3>
-            <p>بار ترافیک سایت یا اپلیکیشن خود را شبیه‌سازی و عملکرد آن را تحلیل کنید.</p>
-        </div>
-        <div class="feature">
-            <h3>گزارش‌های واضح و دقیق</h3>
-            <p>نمودارهای زمان پاسخ، خطاها و نقاط گلوگاهی را در یک نگاه مشاهده کنید.</p>
-        </div>
-        <div class="feature">
-            <h3>بدون نصب پیچیده</h3>
-            <p>Loadify ابزار تحت وب است و با هر مرورگری قابل استفاده می‌باشد.</p>
-        </div>
-        <div class="feature">
-            <h3>امنیت و حریم خصوصی</h3>
-            <p>داده‌های شما محفوظ می‌ماند و هیچ اطلاعاتی به صورت عمومی منتشر نمی‌شود.</p>
-        </div>
-    </section>
+<header class="hero">
+    <h1>High-Scale Load Testing, Without the Infrastructure Headache</h1>
+    <p>Loadify helps engineers simulate massive traffic, validate system reliability, and detect bottlenecks — all without spinning up servers or managing DevOps.</p>
+    <a href="#" class="btn-primary">Get Early Access</a>
+</header>
 
-    <section id="signup" class="signup">
-        <h2>آماده‌اید عملکرد سرویس خود را ارتقا دهید؟</h2>
-        <p>ایمیل خود را وارد کنید تا به نسخه بتا دسترسی پیدا کنید:</p>
-        <form>
-            <input type="email" placeholder="ایمیل شما" required>
-            <button type="submit">ثبت</button>
-        </form>
-    </section>
+<section>
+    <h2>Why Loadify?</h2>
+    <p>Legacy load testing tools are slow, complex, and require manual server setup. Loadify eliminates all of that. Just define your scenario, choose regions, and run your tests instantly.</p>
 
-    <footer>
-        © 2025 Loadify – تمام حقوق محفوظ است
-    </footer>
+    <ul>
+        <li>Distributed load generation across multiple data centers</li>
+        <li>Simple scenario builder for complex workflows</li>
+        <li>Real-time metrics and performance analysis</li>
+        <li>No servers, no containers, no scaling issues</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Use Cases</h2>
+    <p>Loadify is built for engineering teams that need reliability at scale.</p>
+    <ul>
+        <li>E-commerce high-traffic sale events</li>
+        <li>Banking & payment transaction performance</li>
+        <li>API reliability under peak load</li>
+        <li>Microservices stress validation</li>
+    </ul>
+</section>
+
+<section>
+    <h2>How It Works</h2>
+    <p>Define scenarios → Select regions → Scale load → Analyze metrics</p>
+    <p>Everything runs through distributed load workers optimized to generate real-world traffic patterns at massive scale.</p>
+</section>
+
+<footer style="text-align:center; padding:40px; background:#f5f5f5;">
+    <p>© 2025 Loadify – Distributed Load Testing</p>
+</footer>
 
 </body>
 </html>
