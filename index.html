@@ -3,141 +3,767 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Loadify — AI-assisted load testing as a service with best-in-class visualizations and performance engineering tools. Create, run, and analyze load tests with rich dashboards and intelligent scenario generation." />
-  <meta name="keywords" content="AI load testing, load testing as a service, performance engineering, visualization, scenario builder, observability, distributed load testing, SaaS" />
-  <title>Loadify — AI-assisted Load Testing & Performance Engineering</title>
-
+  <meta name="description" content="Loadify — Modern load testing platform with visual scenario builder. Create, execute, and analyze distributed load tests across multiple regions with real-time performance insights and detailed metrics." />
+  <meta name="keywords" content="load testing, performance testing, scenario builder, distributed testing, performance monitoring, stress testing, API testing, load test service, performance engineering, k6 alternative" />
+  <title>Loadify — Visual Load Testing Platform for Modern Applications</title>
+  
   <!-- SEO: OpenGraph -->
-  <meta property="og:title" content="Loadify — Performance Load Testing" />
-  <meta property="og:description" content="High‑performance load testing platform for modern backend systems." />
+  <meta property="og:title" content="Loadify — Visual Load Testing Platform" />
+  <meta property="og:description" content="Create load tests visually, run them globally, and analyze performance with powerful dashboards. No scripting required." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://loadify.ir" />
-
+  <meta property="og:image" content="https://loadify.ir/og-image.jpg" />
+  
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Loadify — Visual Load Testing Platform" />
+  <meta name="twitter:description" content="Create load tests visually, run them globally, and analyze performance with powerful dashboards." />
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: #111;
-      background: #f9fafb;
-      line-height: 1.6;
+      padding: 0;
+      box-sizing: border-box;
     }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Header */
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 40px;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 40px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      z-index: 1000;
+      animation: slideDown 0.6s ease-out;
     }
+    
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
     .logo {
-      font-size: 24px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
       font-weight: 700;
-      color: #111827;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       text-decoration: none;
+      letter-spacing: -0.5px;
     }
-    .cta-btn {
-      padding: 12px 20px;
-      background: #2563eb;
+    
+    .cta-header {
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
       color: white;
       border: none;
       border-radius: 8px;
-      font-size: 16px;
+      font-weight: 600;
+      font-size: 15px;
       cursor: pointer;
-      transition: background 0.2s;
-      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
     }
-    .cta-btn:hover {
-      background: #1e40af;
+    
+    .cta-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
     }
+    
+    /* Hero Section */
     .hero {
-      max-width: 900px;
+      position: relative;
+      max-width: 1200px;
       margin: 0 auto;
       text-align: center;
-      padding: 120px 20px;
+      padding: 180px 40px 120px;
+      overflow: hidden;
     }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+      animation: pulse 8s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 8px 18px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #3b82f6;
+      margin-bottom: 24px;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
     .hero h1 {
+      position: relative;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 28px;
+      color: #0f172a;
+      letter-spacing: -1.5px;
+      animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero p {
+      position: relative;
+      font-size: 22px;
+      color: #475569;
+      max-width: 700px;
+      margin: 0 auto 48px;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+    
+    .cta-buttons {
+      position: relative;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease-out 0.5s both;
+    }
+    
+    .btn-primary {
+      padding: 16px 36px;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 17px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
+    }
+    
+    .btn-secondary {
+      padding: 16px 36px;
+      background: white;
+      color: #3b82f6;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 17px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      border-color: #3b82f6;
+      background: rgba(59, 130, 246, 0.05);
+      transform: translateY(-3px);
+    }
+    
+    /* Features Section */
+    .features-section {
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      padding: 100px 40px;
+    }
+    
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 80px;
+    }
+    
+    .section-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 48px;
       font-weight: 700;
       margin-bottom: 20px;
       color: #0f172a;
+      letter-spacing: -1px;
     }
-    .hero p {
+    
+    .section-header p {
       font-size: 20px;
-      color: #475569;
-      max-width: 600px;
-      margin: 0 auto 40px;
+      color: #64748b;
     }
+    
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 60px 40px;
-      max-width: 1100px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
       margin: 0 auto;
     }
+    
     .feature-card {
-      padding: 24px;
+      position: relative;
+      padding: 40px 32px;
       background: white;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      border-color: #cbd5e1;
+    }
+    
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
       border-radius: 12px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
     }
+    
     .feature-card h3 {
-      margin-top: 0;
-      font-size: 20px;
-      color: #111827;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #0f172a;
     }
+    
     .feature-card p {
       font-size: 16px;
-      color: #4b5563;
+      color: #64748b;
+      line-height: 1.7;
     }
-    footer {
+    
+    /* How It Works */
+    .how-it-works {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .step {
       text-align: center;
-      padding: 40px 20px;
-      color: #6b7280;
+      position: relative;
+    }
+    
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+    }
+    
+    .step h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+    
+    .step p {
+      font-size: 16px;
+      color: #64748b;
+    }
+    
+    /* Benefits Section */
+    .benefits {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      padding: 100px 40px;
+      color: white;
+    }
+    
+    .benefits .section-header h2,
+    .benefits .section-header p {
+      color: white;
+    }
+    
+    .benefits .section-header p {
+      opacity: 0.8;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 60px auto 0;
+    }
+    
+    .benefit-item {
+      display: flex;
+      gap: 16px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .benefit-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateX(8px);
+    }
+    
+    .benefit-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+    
+    .benefit-content h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .benefit-content p {
+      font-size: 15px;
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      padding: 120px 40px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+    
+    .cta-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #0f172a;
+    }
+    
+    .cta-section p {
+      font-size: 20px;
+      color: #64748b;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .email-capture {
+      display: flex;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .email-input {
+      flex: 1;
+      min-width: 280px;
+      padding: 16px 20px;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    
+    .email-input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 60px 40px 40px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-brand h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    
+    .footer-brand p {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    
+    .footer-links h4 {
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .footer-links a {
+      display: block;
+      color: #94a3b8;
+      text-decoration: none;
+      margin-bottom: 12px;
+      font-size: 15px;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: #3b82f6;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 20px;
+      }
+      
+      .hero {
+        padding: 140px 20px 80px;
+      }
+      
+      .hero h1 {
+        font-size: 42px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
+      
+      .section-header h2 {
+        font-size: 36px;
+      }
+      
+      .features-section,
+      .how-it-works,
+      .benefits,
+      .cta-section {
+        padding: 60px 20px;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+      }
+      
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <a class="logo" href="#">Loadify</a>
-    
+    <button class="cta-header" onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})">Join Waitlist</button>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Load Testing as a Service — AI-assisted, Visual, Actionable</h1>
-    <p>Run realistic distributed load tests, get intelligent scenario suggestions, and explore results with interactive visualizations designed for performance engineers and teams.</p>
-  </section>
-
-  <section class="features">
-    <div class="feature-card">
-      <h3>AI-Assisted Scenario Generator</h3>
-      <p>Turn API specs or simple prompts into realistic test scenarios automatically — no scripting required.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Best-in-Class Visualizations</h3>
-      <p>Interactive, drillable dashboards that surface latency hotspots, resource contention, and user-path analytics.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Performance Engineering Toolkit</h3>
-      <p>Built-in analyzers, bottleneck detectors, and actionable recommendations to turn data into fixes.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Accessible SaaS Experience</h3>
-      <p>APIs, collaboration, and simple onboarding so teams of any size can run tests and act on results.</p>
+    <div class="badge">🚀 Coming Soon</div>
+    <h1>
+      Load Testing Made<br>
+      <span class="gradient-text">Simple & Visual</span>
+    </h1>
+    <p>
+      Create complex load test scenarios with an intuitive visual builder. Run distributed tests across multiple regions. Analyze performance with real-time dashboards. No scripting required.
+    </p>
+    <div class="cta-buttons">
+      <button class="btn-primary" onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})">Get Early Access</button>
+      <button class="btn-secondary" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">Explore Features</button>
     </div>
   </section>
 
+  <!-- Features Section -->
+  <section class="features-section" id="features">
+    <div class="section-header">
+      <h2>Everything You Need for Load Testing</h2>
+      <p>Powerful features designed for developers and performance engineers</p>
+    </div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Visual Scenario Builder</h3>
+        <p>Design complex test scenarios using an intuitive drag-and-drop interface. Define user flows, API calls, and conditions without writing a single line of code.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>Multi-Region Testing</h3>
+        <p>Execute load tests from multiple geographic locations simultaneously. Simulate real-world user distribution and identify regional performance issues.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Real-Time Analytics</h3>
+        <p>Monitor your tests as they run with live dashboards. Track response times, error rates, throughput, and resource utilization in real-time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>High-Performance Engine</h3>
+        <p>Powered by battle-tested technology to simulate thousands of concurrent users. Reliable, accurate, and scalable load generation.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>Deep Performance Insights</h3>
+        <p>Analyze percentiles, identify bottlenecks, and drill down into failed requests. Get actionable insights to optimize your application.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔗</div>
+        <h3>API-First Platform</h3>
+        <p>Integrate load testing into your CI/CD pipeline. Automate performance validation and catch regressions before production.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="section-header">
+      <h2>How It Works</h2>
+      <p>Get started with load testing in three simple steps</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Build Your Scenario</h3>
+        <p>Use our visual builder to create test scenarios that mirror real user behavior. Add requests, define think times, and set up conditional logic.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Configure & Execute</h3>
+        <p>Choose your target load, select regions, and launch your test. Watch as thousands of virtual users stress-test your application.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Analyze Results</h3>
+        <p>Review detailed performance metrics, identify bottlenecks, and share reports with your team. Make data-driven optimization decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits">
+    <div class="section-header">
+      <h2>Why Choose Loadify?</h2>
+      <p>Built for modern development teams who demand simplicity and power</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon">⚙️</div>
+        <div class="benefit-content">
+          <h4>No Learning Curve</h4>
+          <p>Start testing in minutes, not days. No need to learn scripting languages or complex configuration formats.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">💰</div>
+        <div class="benefit-content">
+          <h4>Cost-Effective</h4>
+          <p>Pay only for what you use. No expensive infrastructure to maintain or complex licensing models.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🔒</div>
+        <div class="benefit-content">
+          <h4>Secure & Reliable</h4>
+          <p>Your test scenarios and data are encrypted and protected. Enterprise-grade security built-in.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">👥</div>
+        <div class="benefit-content">
+          <h4>Team Collaboration</h4>
+          <p>Share scenarios, results, and insights across your team. Everyone stays aligned on performance goals.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">📈</div>
+        <div class="benefit-content">
+          <h4>Scalable Testing</h4>
+          <p>From small APIs to large-scale applications. Test with hundreds to hundreds of thousands of users.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🚀</div>
+        <div class="benefit-content">
+          <h4>Continuous Integration</h4>
+          <p>Integrate with your existing tools and workflows. Automate performance testing in your deployment pipeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="waitlist">
+    <h2>Ready to Test at Scale?</h2>
+    <p>Join our waitlist and be among the first to experience the future of load testing. Get exclusive early access and special launch pricing.</p>
+    <div class="email-capture">
+      <input type="email" class="email-input" placeholder="Enter your email address" />
+      <button class="btn-primary">Join Waitlist</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    © 2025 Loadify — All rights reserved.<br><br>Contact us: <a href="mailto:info@loadify.ir">info@loadify.ir</a>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Loadify</h3>
+        <p>Modern load testing platform that makes performance engineering accessible to every development team.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing (Coming Soon)</a>
+        <a href="#docs">Documentation</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#blog">Blog</a>
+        <a href="#careers">Careers</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="mailto:info@loadify.ir">info@loadify.ir</a>
+        <a href="mailto:support@loadify.ir">support@loadify.ir</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Loadify. All rights reserved.
+    </div>
   </footer>
+
+  <script>
+    // Simple scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-card, .step, .benefit-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
